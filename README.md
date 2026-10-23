@@ -7,3 +7,7 @@ CTP San Sebastián. Promotora de Emprendimiento e Innovación: Jessica Salazar.
 
 El ingreso (cédula y contraseña) se valida dentro de la página: ordena el acceso, no protege la información. La contraseña no se escribe en este repositorio.
 Material de preparación. No es una certificación oficial del MEP.
+
+## Simulacro
+
+`simulacro.html`: simulacro de práctica (100 preguntas). Los resultados se guardan solo en el navegador de cada persona.
