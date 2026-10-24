@@ -112,7 +112,7 @@ if(document.readyState!=='loading')go();else document.addEventListener('DOMConte
   fetch(SYNC_URL+'?action=lookup&p=Emprende2026&cedula='+encodeURIComponent(id),{cache:'no-store'}).then(function(r){return r.json();}).then(function(j){
    if(F('id')&&F('id').value.replace(/[\s-]/g,'')!==id)return;
    if(j&&j.ok&&j.found){F('first').value=j.nombre;F('last').value=j.apellidos;F('group').value=j.seccion;F('spec').value=j.especialidad;lock(true);msg('✓ Datos encontrados. Revísalos y escribe la contraseña.','#0b7d70');}
-   else if(j&&j.ok){lock(false);msg('No encontramos esa cédula en la lista. Revisa que esté bien escrita; si es correcta, escribe tus datos y avísale a tu docente.','#b45309');}
+   else if(j&&j.ok&&j.found===false){lock(false);msg('No encontramos esa cédula en la lista. Revisa que esté bien escrita; si es correcta, escribe tus datos y avísale a tu docente.','#b45309');}
    else{lock(false);msg('');}
   }).catch(function(){lock(false);msg('');});
  }
