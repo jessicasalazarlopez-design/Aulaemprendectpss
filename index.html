@@ -661,7 +661,7 @@ $("#loginForm").addEventListener("submit",async e=>{
   e.preventDefault();
   const ced=$("#ced").value.replace(/[\s-]/g,""),pw=$("#pw").value,err=$("#loginErr");
   if(!/^\d{9,12}$/.test(ced)){err.textContent="Escribe tu número de cédula con 9 a 12 dígitos.";return}
-  if(await sha("pw:"+pw)!==PW_HASH){err.textContent="La contraseña no es correcta. Pídele la contraseña a tu docente.";return}
+  if(await sha("pw:"+pw)!==PW_HASH){err.textContent="La contraseña no es correcta. Revísala con el botón «Ver»: distingue mayúsculas y minúsculas. Si sigue fallando, pídesela a tu docente.";return}
   err.textContent="";
   enter(ced,(await sha("cert:"+ced)).slice(0,24));
 });
@@ -883,4 +883,19 @@ function viewGloss(){
   try{const s=JSON.parse(sessionStorage.getItem("repaso-sesion")||"null");if(s&&s.ph&&s.ced){enter("00000"+s.ced+"0000".slice(0,0),s.ph);$("#who").textContent="Cédula ••••"+s.ced;return}}catch(e){}
 })();
 
+</script>
+<script>
+/* Botón «Ver» para mostrar u ocultar contraseñas */
+(function(){
+function enhance(root){root.querySelectorAll('input[type=password]:not([data-pw])').forEach(function(i){
+ i.dataset.pw='1';var w=document.createElement('span');w.style.cssText='position:relative;display:block';
+ i.parentNode.insertBefore(w,i);w.appendChild(i);i.style.paddingRight='76px';
+ var b=document.createElement('button');b.type='button';b.textContent='Ver';b.setAttribute('aria-label','Mostrar contraseña');b.setAttribute('aria-pressed','false');
+ b.style.cssText='position:absolute;right:6px;top:50%;transform:translateY(-50%);min-height:34px;padding:0 12px;border:1px solid #b9c9bf;border-radius:8px;background:#fff;color:#123f36;font:600 .85rem inherit;cursor:pointer';
+ b.addEventListener('click',function(){var s=i.type==='password';i.type=s?'text':'password';b.textContent=s?'Ocultar':'Ver';b.setAttribute('aria-label',s?'Ocultar contraseña':'Mostrar contraseña');b.setAttribute('aria-pressed',String(s));i.focus();});
+ w.appendChild(b);});}
+function go(){enhance(document);}
+new MutationObserver(go).observe(document.documentElement,{childList:true,subtree:true});
+if(document.readyState!=='loading')go();else document.addEventListener('DOMContentLoaded',go);
+})();
 </script>
