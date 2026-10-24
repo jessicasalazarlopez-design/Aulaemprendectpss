@@ -603,6 +603,8 @@ terms:[["Responsabilidad limitada","El socio responde solo hasta el monto de su 
 X("3.2",{body:[
 {h:"Los cinco estudios del plan de negocio",table:{head:["Estudio","Pregunta que responde","Contenido clave"],rows:[["Mercado","¿Existe demanda real?","Cliente meta, competencia, demanda, oferta"],["Mercadeo","¿Cómo daremos a conocer y venderemos?","4P (producto, precio, plaza, promoción), buyer persona, KPI, canales"],["Técnico","¿Cómo se produce?","Tamaño, macro y microlocalización, ingeniería del proyecto, distribución física, recursos"],["Económico","¿Cuánto cuesta y cuánto se necesita?","Inversión inicial, costos fijos y variables, punto de equilibrio"],["Financiero","¿Es rentable y cómo se financia?","Inversión fija, diferida y capital de trabajo, fuentes de financiamiento, estado de resultados, balance general y flujo de caja"]]},p:"Elementos del plan: resumen ejecutivo, descripción de la empresa, análisis de mercado, plan de mercadeo y los estudios técnico, económico y financiero. Un buen plan es claro, realista y flexible, y sus partes son <b>coherentes</b> (los ingresos proyectados deben concordar con el estudio de mercado)."},
 {h:"Detalles que se preguntan",ul:["<b>Macrolocalización</b>: región o provincia. <b>Microlocalización</b>: el sitio exacto (cercanía a clientes y proveedores, alquiler, servicios, regulaciones municipales).","<b>Inversión diferida</b>: permisos, licencias y registros. <b>Inversión fija</b>: maquinaria, mobiliario, equipos.","El <b>flujo de caja</b> es el documento más crítico para anticipar problemas de liquidez.","Un <b>buyer persona</b> es el arquetipo del cliente ideal; los <b>KPI</b> son indicadores cuantificables para medir el progreso.","Propósitos del plan: validar la idea y reducir riesgos, obtener financiamiento y socios, trazar la estrategia y guiar decisiones."]}
+,
+{h:"Objetivos SMART y línea base",ul:["Un objetivo SMART es <b>Específico, Medible, Alcanzable, Relevante y con Tiempo</b> definido.","La <b>línea base</b> es el punto de partida medido hoy; sin ella no se sabe cuánto hay que crecer.","Crecimiento por período = (meta − línea base) ÷ número de períodos. Ejemplo: de 70 a 90 pedidos en 5 meses → 20 ÷ 5 = 4 pedidos más cada mes."]}
 ],ojo:["No mezcles <b>estudio económico</b> (¿cuánto cuesta producir y cuánto se vende?) con <b>estudio financiero</b> (¿de dónde sale el dinero y cómo fluye?).","Estudio técnico = <b>cómo</b> se produce; estudio de mercado = <b>para quién</b>."],
 terms:[["Buyer persona","Arquetipo del cliente ideal construido con datos."],["KPI","Indicador clave de desempeño: métrica cuantificable del avance hacia una meta."],["Inversión diferida","Gastos previos como permisos, licencias y registros."]]});
 
@@ -637,6 +639,13 @@ X("3.7",{body:[
 ],ojo:["La tecnología <b>complementa</b> a las personas; no reemplaza el servicio ni sustituye el criterio.","Una wiki es para conocimiento <b>interno</b> del negocio; el blog, para público externo."],
 terms:[["Wiki","Sitio colaborativo interno para documentar procedimientos con historial de versiones."],["ERP","Sistema que integra los procesos principales de la empresa."]]});
 
+/* Complementos: espíritu emprendedor, creatividad y términos de formalización */
+X("1.1",{body:[{h:"Emprendimiento, espíritu emprendedor y emprendedurismo",ul:["<b>Emprendimiento</b>: el proyecto o proceso de crear algo nuevo (un negocio, una iniciativa social).","<b>Espíritu emprendedor</b>: la actitud de iniciativa, curiosidad y deseo de mejorar; se puede tener sin abrir una empresa.","<b>Emprendedurismo</b>: el campo de estudio y la cultura que promueve la creación de empresas y proyectos.","Quien emprende identifica una oportunidad, reúne recursos, asume un riesgo calculado y actúa."]}],terms:[["Emprendedurismo","Campo de estudio y cultura que promueve la creación de empresas e iniciativas."]]});
+X("1.5",{body:[{h:"Equipos diversos y emprendimiento con impacto",ul:["La <b>diversidad de ideas y de personas</b> en un equipo aumenta la creatividad, porque aporta perspectivas distintas y más soluciones posibles. La rigidez y el conflicto sin gestión la debilitan.","<b>Creatividad</b>: generar ideas nuevas y originales. <b>Innovación</b>: llevarlas a la práctica y que generen valor.","Un <b>emprendimiento tecnológico con impacto ambiental</b> combina tecnología con un beneficio para el ambiente. Ejemplo: una aplicación que conecta hogares con centros de acopio para reciclar."]}]});
+X("3.2",{body:[{h:"El resumen ejecutivo",p:"Es la síntesis breve y clara del proyecto: la idea central, los objetivos principales, la propuesta de valor y las conclusiones más relevantes. Se escribe al final, pero se presenta primero; quien lo lee debe comprender el proyecto sin leer todo el plan."}]});
+X("3.3",{body:[{h:"Nombre comercial, razón social y denominación social",ul:["<b>Nombre comercial</b>: el nombre con el que el público reconoce al negocio; se inscribe en el Registro Nacional y puede protegerse.","<b>Razón social o denominación social</b>: el nombre legal de la sociedad, el que aparece en su acta de constitución.","<b>Contrato mercantil</b>: documento que formaliza acuerdos comerciales; no es un nombre.","<b>Patente municipal</b>: la licencia que autoriza a un negocio a funcionar dentro de un cantón."]}],terms:[["Nombre comercial","Nombre con el que el público identifica al negocio; se registra en el Registro Nacional."],["Patente municipal","Licencia de la municipalidad para operar comercialmente en el cantón."]]});
+X("3.5",{ojo:["El <b>control</b> administrativo verifica el cumplimiento de objetivos y corrige desviaciones; no define la misión (planificación) ni contrata personal (organización y dirección)."]});
+
 const TEST_URL="https://claude.ai/artifact/TRyo6UcLKYQUWAdr47yAQy";
 const AREAS={1:"Oportunidades de Negocios",2:"Modelo de negocios",3:"Creación de Empresas"};
 const $=s=>document.querySelector(s);
@@ -661,7 +670,7 @@ $("#loginForm").addEventListener("submit",async e=>{
   e.preventDefault();
   const ced=$("#ced").value.replace(/[\s-]/g,""),pw=$("#pw").value,err=$("#loginErr");
   if(!/^\d{9,12}$/.test(ced)){err.textContent="Escribe tu número de cédula con 9 a 12 dígitos.";return}
-  if(await sha("pw:"+pw)!==PW_HASH){err.textContent="La contraseña no es correcta. Revísala con el botón «Ver»: distingue mayúsculas y minúsculas. Si sigue fallando, pídesela a tu docente.";return}
+  if(await sha("pw:"+pw)!==PW_HASH){err.textContent="La contraseña no es correcta. Pídele la contraseña a tu docente.";return}
   err.textContent="";
   enter(ced,(await sha("cert:"+ced)).slice(0,24));
 });
@@ -883,19 +892,4 @@ function viewGloss(){
   try{const s=JSON.parse(sessionStorage.getItem("repaso-sesion")||"null");if(s&&s.ph&&s.ced){enter("00000"+s.ced+"0000".slice(0,0),s.ph);$("#who").textContent="Cédula ••••"+s.ced;return}}catch(e){}
 })();
 
-</script>
-<script>
-/* Botón «Ver» para mostrar u ocultar contraseñas */
-(function(){
-function enhance(root){root.querySelectorAll('input[type=password]:not([data-pw])').forEach(function(i){
- i.dataset.pw='1';var w=document.createElement('span');w.style.cssText='position:relative;display:block';
- i.parentNode.insertBefore(w,i);w.appendChild(i);i.style.paddingRight='76px';
- var b=document.createElement('button');b.type='button';b.textContent='Ver';b.setAttribute('aria-label','Mostrar contraseña');b.setAttribute('aria-pressed','false');
- b.style.cssText='position:absolute;right:6px;top:50%;transform:translateY(-50%);min-height:34px;padding:0 12px;border:1px solid #b9c9bf;border-radius:8px;background:#fff;color:#123f36;font:600 .85rem inherit;cursor:pointer';
- b.addEventListener('click',function(){var s=i.type==='password';i.type=s?'text':'password';b.textContent=s?'Ocultar':'Ver';b.setAttribute('aria-label',s?'Ocultar contraseña':'Mostrar contraseña');b.setAttribute('aria-pressed',String(s));i.focus();});
- w.appendChild(b);});}
-function go(){enhance(document);}
-new MutationObserver(go).observe(document.documentElement,{childList:true,subtree:true});
-if(document.readyState!=='loading')go();else document.addEventListener('DOMContentLoaded',go);
-})();
 </script>
